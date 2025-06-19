@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register to Join Group</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+    }
+    .marquee {
+      background: #003366;
+      color: white;
+      padding: 10px;
+    }
+    .container {
+      max-width: 450px;
+      margin: 60px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type=submit] {
+      background-color: #003366;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type=submit]:hover {
+      background-color: #0055a5;
+    }
+    .error {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="marquee">
+    <marquee>Only bonafide trainees are allowed to join the group.</marquee>
+  </div>
+
+  <div class="container">
+    <form id="registerForm">
+      <h3>Register to Join: THE SIAYA NATIONAL POLYTECHNIC OFFICIAL PAGE</h3>
+      <input type="text" id="fullName" placeholder="Full Name" required>
+      <input type="text" id="admission" placeholder="Admission Number" required>
+      <input type="text" id="contact" placeholder="Contact" required>
+      <input type="text" id="department" placeholder="Department" required>
+      <input type="text" id="course" placeholder="Course" required>
+      <input type="text" id="idNumber" placeholder="ID Number" required>
+      <input type="submit" value="Register & Join Group">
+      <p class="error" id="error"></p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const admission = document.getElementById("admission").value.trim().toUpperCase();
+      const pattern = /(S22|S23|S24|S25|M22|M23|M24|M25|J22|J23|J24|J25)$/;
+
+      if (pattern.test(admission)) {
+        window.location.href = "https://chat.whatsapp.com/INJYUWDwq8TCOv6LT21v3l";
+      } else {
+        document.getElementById("error").textContent = "Incorrect Credentials please contact the administrator.";
+      }
+    });
+  </script>
+</body>
+</html>
