@@ -57,7 +57,7 @@
     }
   </style>
 </head>
-<body>
+<body oncontextmenu="return false" onkeydown="return disableKeys(event)">
   <div class="marquee">
     <marquee>Only bonafide trainees are allowed to join the group.</marquee>
   </div>
@@ -93,6 +93,16 @@
         document.getElementById("error").textContent = "Incorrect Credentials please contact the administrator.";
       }
     });
+
+    function disableKeys(e) {
+      if (
+        e.keyCode == 123 || // F12
+        (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) || // Ctrl+Shift+I/J/C
+        (e.ctrlKey && e.keyCode == 85) // Ctrl+U
+      ) {
+        return false;
+      }
+    }
   </script>
 </body>
 </html>
